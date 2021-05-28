@@ -27,7 +27,7 @@ void push(int idx, bool isLeaf) {
 	t[idx] = gcd(t[idx], lazy[idx]);
 	if (!isLeaf) {
 		lazy[idx << 1] = gcd(lazy[idx << 1], lazy[idx]);
-		lazy[idx << 1 | 1] = gcd(lazy[idx << 1], lazy[idx]);
+		lazy[idx << 1 | 1] = gcd(lazy[idx << 1 | 1], lazy[idx]);
 	}
 	lazy[idx] = 0;
 }
